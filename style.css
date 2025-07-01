@@ -1,0 +1,725 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    scroll-padding-top: 70px; /* offset for fixed header */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Fixed Top Header */
+/* Removed fixed-header styles to make header normal */
+/* .fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #004080;
+    color: #fff;
+    z-index: 10000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+} */
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: 1.5rem;
+}
+
+.nav-menu a {
+    color: #004080; /* Changed from white to dark blue for visibility */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #ffcc00;
+}
+
+header {
+    background-color: #f9f9f9; /* Light background for header */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 0.5rem 0;
+    position: relative;
+    z-index: 1000;
+}
+
+/* Nav Toggle Button (Mobile) */
+.nav-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Hero Banner */
+.hero-banner {
+    position: relative;
+    /* margin-top: 70px; Removed to make slide touch navbar */
+    text-align: center;
+    color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 3200 / 1300;
+    max-height: 120vh;
+    padding: 0; /* Remove padding from hero-banner */
+}
+
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    z-index: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.slideshow-container:hover .slide-btn {
+    opacity: 1;
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+.slideshow-container img.slide {
+    position: absolute;
+    width: 100%;
+    height: 110%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    display: block; /* Fix inline spacing */
+}
+
+.slideshow-container img.slide[src$="image3.jpg"] {
+    object-fit: contain;
+}
+
+.slideshow-container img.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 6rem 2rem; /* Keep padding here */
+    box-sizing: border-box;
+    background-color: rgba(0, 64, 128, 0.6); /* Highlight background for text */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content .cta-button {
+    margin-top: 3rem;
+}
+
+/* Quick Links Section */
+.quick-links {
+    margin: 2rem 0;
+}
+
+/* Statements Section */
+.statements-section {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.statement-content {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.statement-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.statement {
+    flex: 1;
+    max-width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+.statement h2 {
+    color: #1a237e;
+    border-left: 6px solid #90caf9;
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.statement-content {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.statement-image {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    flex-shrink: 0;
+}
+
+.statement-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(26, 35, 126, 0.8);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0 0 8px 8px;
+    text-align: center;
+}
+
+.image-overlay h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.image-overlay p {
+    margin: 0;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+.statement-text h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.statement-text p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.read-more-btn {
+    background-color: #90caf9;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    color: #1a237e;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #64b5f6;
+}
+
+.quick-links h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #004080;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.quick-link {
+    display: block;
+    background-color: #004080;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.quick-link:hover {
+    background-color: #003366;
+}
+
+/* Admissions Hero Section */
+.admissions-hero {
+    margin-top: 70px; /* height of fixed header */
+    background-image: url('assets/admission.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 64, 128, 0.6);
+}
+
+/* Admissions Post Section */
+.admissions-post {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.admissions-post img {
+    width: 50%;
+    border-radius: 8px;
+}
+
+.admissions-text {
+    width: 50%;
+    font-size: 1.2rem;
+    color: #004080;
+}
+
+@media (max-width: 768px) {
+    .admissions-post {
+        flex-direction: column;
+    }
+    .admissions-post img,
+    .admissions-text {
+        width: 100%;
+    }
+}
+
+.admissions-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.admissions-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: #ffcc00;
+    color: #004080;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e6b800;
+}
+
+.program-banner {
+  background-color: #f2f2f2; /* light grey */
+  padding: 4rem 0 2rem 0;
+  margin-top: 80px;
+  width: 100%;
+}
+
+/* Content container centered inside the banner */
+.program-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  color: #003366;
+}
+
+/* Program cards layout */
+.program-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+/* Card styles */
+.program-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 220px;
+  transition: transform 0.3s ease;
+  aspect-ratio: 1 / 1;
+}
+
+.program-card:hover {
+  transform: translateY(-10px);
+}
+
+.program-card h2 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #003366;
+}
+
+.program-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Icon placeholders */
+.icon {
+  width: 40px;
+  height: 40px;
+  fill: #90caf9;
+  opacity: 0.7;
+}
+
+.keyboard-icon {
+  background: url('data:image/svg+xml;utf8,<svg fill="%2390caf9" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="2" ry="2"/></svg>') no-repeat center center;
+  background-size: contain;
+}
+
+.newspaper-icon {
+  background: url('data:image/svg+xml;utf8,<svg fill="%2390caf9" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" ry="2"/></svg>') no-repeat center center;
+  background-size: contain;
+}
+
+.board-icon {
+  background: url('data:image/svg+xml;utf8,<svg fill="%2390caf9" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="1" ry="1"/></svg>') no-repeat center center;
+  background-size: contain;
+}
+
+.skill-icon {
+  background: url('data:image/svg+xml;utf8,<svg fill="%2390caf9" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>') no-repeat center center;
+  background-size: contain;
+}
+
+/* Enrollment Table */
+.enrollment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.enrollment-table th,
+.enrollment-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.enrollment-table th {
+    background-color: #004080;
+    color: #fff;
+}
+
+.enrollment-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #222;
+    color: #ccc;
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 1rem;
+    flex-wrap: wrap;
+}
+.footer-logo-name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.footer-logo {
+    height: 60px;
+    width: auto;
+}
+.footer-logo-name h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+.footer-contacts,
+.footer-quicklinks {
+    flex: 1 1 200px;
+    margin: 0 1rem;
+}
+.footer-contacts h3,
+.footer-quicklinks h3 {
+    margin-bottom: 0.5rem;
+    color: #ffcc00;
+}
+.footer-contacts p {
+    margin: 0.2rem 0;
+}
+.footer-quicklinks ul.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+.footer-quicklinks ul.social-links li a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.footer-quicklinks ul.social-links li a:hover {
+    color: #ffcc00;
+}
+.footer-credit {
+    background-color: #004080;
+    color: #ccc;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+/* Contact Section */
+.contact-section {
+    margin-top: 80px;
+    padding-bottom: 2rem;
+}
+
+.contact-section article {
+    margin-bottom: 2rem;
+}
+
+.contact-section form input,
+.contact-section form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.contact-section form button {
+    background-color: #004080;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-section form button:hover {
+    background-color: #003366;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #004080;
+        width: 200px;
+        flex-direction: column;
+        display: none;
+        border-radius: 0 0 0 8px;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 1rem 0;
+        text-align: right;
+        margin-right: 1rem;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .banner-text {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .admissions-hero {
+        padding: 2rem 1rem;
+    }
+
+    .enrollment-table th,
+    .enrollment-table td {
+        padding: 8px 10px;
+    }
+}
+
+/* Get Directions Button */
+#getDirectionsBtn {
+    background-color: #004080;
+    color: #fff;
+    border: 2px solid #ffcc00;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#getDirectionsBtn:hover {
+    background-color: #ffcc00;
+    color: #004080;
+}
+
+/* Gallery Section */
+.gallery-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.gallery-row img {
+    width: 32%;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* Updated styles for Chairman and Principal Statements section */
+.statements-section {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.statement {
+    flex: 1;
+    max-width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-content {
+    max-height: 120px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.text-content.expanded {
+    max-height: 1000px; /* large enough to show full content */
+}
+
+.read-more-btn {
+    background-color: #90caf9;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    color: #1a237e;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+.read-more-btn:hover {
+    background-color: #64b5f6;
+}
+
+@media (max-width: 768px) {
+    .statements-section {
+        flex-direction: column;
+    }
+
+    .statement {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+}

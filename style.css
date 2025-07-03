@@ -485,6 +485,112 @@ header {
     overflow: hidden;
 }
 
+/* Why CLEbS Section */
+.why-clebs-section {
+    background-color: #005a8c; /* Dark blue background */
+    color: white;
+    padding: 2rem 0 1.5rem 0;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.why-clebs-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.why-clebs-container h1 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.why-clebs-container p {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #d0e7f9;
+}
+
+.why-clebs-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.why-clebs-card {
+    background-color: white;
+    color: #004080;
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 180px;
+    transition: transform 0.3s ease;
+    aspect-ratio: 1 / 1;
+}
+
+.why-clebs-card:hover {
+    transform: translateY(-10px);
+}
+
+.why-clebs-card h2 {
+    margin-top: 0.8rem;
+    margin-bottom: 0.4rem;
+    color: #a52a4e; /* Burgundy color */
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.why-clebs-card p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+/* Icon placeholders for Why CLEbS cards */
+.icon {
+    width: 40px;
+    height: 40px;
+    fill: #90caf9;
+    opacity: 0.7;
+}
+
+.academic-icon {
+    background: url('data:image/svg+xml;utf8,<svg fill="%23004d80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L1 7l11 5 9-4.09V17h2V7z"/></svg>') no-repeat center center;
+    background-size: contain;
+}
+
+.student-icon {
+    background: url('data:image/svg+xml;utf8,<svg fill="%23004d80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a6 6 0 0112 0v2"/></svg>') no-repeat center center;
+    background-size: contain;
+}
+
+.extracurricular-icon {
+    background: url('data:image/svg+xml;utf8,<svg fill="%23004d80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>') no-repeat center center;
+    background-size: contain;
+}
+
+.hostel-icon {
+    background: url('data:image/svg+xml;utf8,<svg fill="%23004d80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2" ry="2"/></svg>') no-repeat center center;
+    background-size: contain;
+}
+
+.counseling-icon {
+    background: url('data:image/svg+xml;utf8,<svg fill="%23004d80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/><path d="M6 20v-2a6 6 0 0112 0v2"/></svg>') no-repeat center center;
+    background-size: contain;
+}
+
+.modern-learning-icon {
+    background: url('data:image/svg+xml;utf8,<svg fill="%23004d80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>') no-repeat center center;
+    background-size: contain;
+}
+
 .enrollment-table th,
 .enrollment-table td {
     padding: 12px 15px;

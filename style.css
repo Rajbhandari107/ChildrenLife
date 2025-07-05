@@ -14,9 +14,80 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    scroll-padding-top: 70px; /* offset for fixed header */
+    scroll-padding-top: 90px; /* offset for fixed header + top bar */
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
+
+/* Top Header Bar */
+.top-header-bar {
+    background-color: #004080;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 0;
+    font-size: 0.9rem;
+}
+
+.top-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.top-header-left span {
+    margin-right: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.top-header-right a {
+    color: white;
+    margin-left: 15px;
+    font-size: 1.1rem;
+    transition: opacity 0.3s ease;
+}
+
+.top-header-right a:hover {
+    opacity: 0.7;
+}
+
+/* Navigation Menu */
+header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 999;
+    padding: 0.5rem 0;
+}
+
+header.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+/* Keep existing header-container styles */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0;
+}
+
+/* Nav menu and links already styled */
+
+/* Hover effect for nav links already present */
+
+/* Responsive adjustments for nav menu and toggle already present */
 
 /* Container */
 .container {

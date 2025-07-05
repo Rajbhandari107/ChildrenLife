@@ -222,7 +222,7 @@ header {
     display: block; /* Fix inline spacing */
 }
 
-.slideshow-container img.slide[src$="image3.jpg"] {
+.slideshow-container img.slide[src$="Image3.jpg"] {
     object-fit: contain;
 }
 

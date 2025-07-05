@@ -8,6 +8,19 @@ document.addEventListener('DOMContentLoaded', function () {
         navMenu.classList.toggle('show');
     });
 
+    // Scroll event to toggle fixed class on header
+    const header = document.querySelector('header');
+    const topHeaderBar = document.querySelector('.top-header-bar');
+    const topHeaderHeight = topHeaderBar ? topHeaderBar.offsetHeight : 0;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > topHeaderHeight) {
+            header.classList.add('fixed');
+        } else {
+            header.classList.remove('fixed');
+        }
+    });
+
     // Removed contact form submit event listener to allow default form submission to Formspree
 
     // Slideshow for hero banner
